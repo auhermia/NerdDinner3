@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upcoming Dinners</h2>
+
+<ul>
+    <% foreach (var dinner in Model) { %>
+
+    <li>
+        <%=Html.Encode(dinner.Title) %>
+        on
+        <%=Html.Encode(dinner.EventDate.ToShortDateString())%>
+        @
+        <%=Html.Encode(dinner.EventDate.ToShortTimeString())%>
+    </li>
+
+    <% } %>
+</ul>
